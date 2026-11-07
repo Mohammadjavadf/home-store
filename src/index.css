@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  .dark {
+    color-scheme: dark;
+  }
+
+  html {
+    direction: rtl;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream text-ink font-body antialiased;
+    @apply dark:bg-night dark:text-night-ink;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* اسکرولبار سفارشی */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-copper/30 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-copper/50;
+  }
+
+  /* انتخاب متن */
+  ::selection {
+    @apply bg-copper/20 text-copper-dark dark:text-copper-light;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+/* استایل تقویم شمسی */
+.rmdp-wrapper {
+  font-family: 'Vazirmatn', sans-serif !important;
+  border-radius: 1rem !important;
+  box-shadow: 0 4px 24px -8px rgba(0, 0, 0, 0.2) !important;
+}
+
+.rmdp-calendar {
+  padding: 8px !important;
+}
+
+.rmdp-day.rmdp-selected span:not(.highlight) {
+  background-color: #b87333 !important;
+  color: white !important;
+}
+
+.rmdp-day.rmdp-today span {
+  background-color: rgba(184, 115, 51, 0.1) !important;
+  color: #b87333 !important;
+}
+
+.rmdp-week-day {
+  color: #b87333 !important;
+  font-weight: 600 !important;
+}
+
+.rmdp-arrow {
+  border-color: #b87333 !important;
+}
+
+.rmdp-arrow-container:hover {
+  background-color: rgba(184, 115, 51, 0.1) !important;
+}
